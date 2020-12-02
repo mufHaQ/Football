@@ -8,8 +8,34 @@ public class ModelFootballRealm extends RealmObject {
     private Integer id;
     private String judul;
     private String desc;
-    private String releaseDate;
     private String path;
+    private String year;
+    private String alternate;
+    private String country;
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getAlternate() {
+        return alternate;
+    }
+
+    public void setAlternate(String alternate) {
+        this.alternate = alternate;
+    }
 
     public Integer getId() {
         return id;
@@ -33,14 +59,6 @@ public class ModelFootballRealm extends RealmObject {
 
     public void setDesc(String desc) {
         this.desc = desc;
-    }
-
-    public String getReleaseDate() {
-        return releaseDate;
-    }
-
-    public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
     }
 
     public String getPath() {

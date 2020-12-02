@@ -19,19 +19,20 @@ public class DetailClub extends AppCompatActivity {
 
     Realm realm;
     RealmHelper realmHelper;
-    ModelDataFavourite clubModel;
+    ModelFootballRealm clubModel;
 
 
     Bundle extras;
     String title;
+    String alternate;
+    String country;
     String date;
     String description;
     String path;
     String id;
 
-    TextView teamName;
     ImageView teamBadges;
-    TextView teamDesc;
+    TextView teamDesc, teamName, teamAlternate, teamYear, teamCountry;
     Button bBookmark;
 
 
@@ -43,16 +44,27 @@ public class DetailClub extends AppCompatActivity {
         teamName = (TextView)findViewById(R.id.teamNAmeDetail);
         teamDesc = (TextView)findViewById(R.id.teamDesc);
         teamBadges = (ImageView) findViewById(R.id.teamBadgesDetail);
+        teamAlternate = (TextView) findViewById(R.id.teamAlternateName);
+        teamYear = (TextView) findViewById(R.id.formedYear);
+        teamCountry = (TextView) findViewById(R.id.teamCountryDetail);
         bBookmark = (Button) findViewById(R.id.bBookmark);
         teamDesc.setMovementMethod(new ScrollingMovementMethod());
 
         if (extras != null) {
             title = extras.getString("namaClub");
-            id = extras.getString("id");
+            id = extras.getString("idTeam");
             description = extras.getString("deskripsiClub");
             path = extras.getString("logoClub");
+            date = extras.getString("formedYear");
+            alternate = extras.getString("alternateTeamName");
+            country = extras.getString("country");
+
+            teamCountry.setText(country);
+            teamAlternate.setText(alternate);
+            teamYear.setText(date);
             teamName.setText(title);
             teamDesc.setText(description);
+
             Glide.with(DetailClub.this)
                     .load(path)
                     .override(Target.SIZE_ORIGINAL)
@@ -70,11 +82,13 @@ public class DetailClub extends AppCompatActivity {
         bBookmark.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                clubModel = new ModelDataFavourite();
-                clubModel.setTeamDesc(description);
-                clubModel.setTeamName(title);
-                clubModel.setBadge(path);
-                clubModel.setTeamYear(date);
+                clubModel = new ModelFootballRealm();
+                clubModel.setDesc(description);
+                clubModel.setAlternate(alternate);
+                clubModel.setJudul(title);
+                clubModel.setPath(path);
+                clubModel.setYear(date);
+                clubModel.setCountry(country);
 
                 realmHelper = new RealmHelper(realm);
                 realmHelper.save(clubModel);

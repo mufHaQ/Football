@@ -38,21 +38,22 @@ public class MainMenu extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), ListData.class));
             }
         });
-//        menu2 = (CardView)findViewById(R.id.menu2);
-//        menu2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(getApplicationContext(), ListDataFavourite.class));
-//            }
-//        });
 
-        menu3 = (CardView) findViewById(R.id.menu3);
-        menu3.setOnClickListener(new View.OnClickListener() {
+        menu2 = (CardView)findViewById(R.id.menu2);
+        menu2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Schedule_List.class));
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ListDataFavourite.class));
             }
         });
+
+//        menu3 = (CardView) findViewById(R.id.menu3);
+//        menu3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(getApplicationContext(), Schedule_List.class));
+//            }
+//        });
 
         //
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

@@ -25,7 +25,7 @@ import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
 public class DataAdapterFavourite extends RecyclerView.Adapter<DataAdapterFavourite.DatakuViewHolder> {
-    private List<ModelDataFavourite> dataList;
+    private List<ModelFootballRealm> dataList;
     private Callback callback;
     View viewku;
     int posku;
@@ -38,7 +38,7 @@ public class DataAdapterFavourite extends RecyclerView.Adapter<DataAdapterFavour
     }
 
 
-    public DataAdapterFavourite(List<ModelDataFavourite> dataList, Callback callback) {
+    public DataAdapterFavourite(List<ModelFootballRealm> dataList, Callback callback) {
         this.callback = callback;
         this.dataList = dataList;
         Log.d("makanan", "MahasiswaAdapter: "+dataList.size()+"");
@@ -56,14 +56,14 @@ public class DataAdapterFavourite extends RecyclerView.Adapter<DataAdapterFavour
 
     @Override
     public void onBindViewHolder(final DatakuViewHolder holder, final int position) {
-        holder.teamName.setText(dataList.get(position).getTeamName());
-        holder.teamNameAlternate.setText(dataList.get(position).getTeamNameAlternate());
-        holder.teamCountry.setText(dataList.get(position).getTeamCountry());
-        holder.teamYear.setText(dataList.get(position).getTeamYear());
-        Log.d("makananku", "onBindViewHolder: "+dataList.get(position).getBadge());
+        holder.teamName.setText(dataList.get(position).getJudul());
+        holder.teamNameAlternate.setText(dataList.get(position).getAlternate());
+        holder.teamCountry.setText(dataList.get(position).getCountry());
+        holder.teamYear.setText(dataList.get(position).getYear());
+        Log.d("logo", "onBindViewHolder: "+dataList.get(position).getPath());
         //pakai glide karena untuk nampilkan data gambar dari URL / permission / graddle
         Glide.with(holder.itemView)
-                .load(dataList.get(position).getBadge())
+                .load(dataList.get(position).getPath())
 //                .override(Target.SIZE_ORIGINAL)
                 .apply(new RequestOptions().override(400))
                 .placeholder(R.mipmap.ic_launcher)
@@ -86,6 +86,7 @@ public class DataAdapterFavourite extends RecyclerView.Adapter<DataAdapterFavour
             viewku=itemView;
             card = (CardView) itemView.findViewById(R.id.cardData);
             ivprofile = (ImageView) itemView.findViewById(R.id.adapterProfile);
+            teamNameAlternate = (TextView) itemView.findViewById(R.id.teamAlternate);
             teamName = (TextView) itemView.findViewById(R.id.teamName);
             teamCountry = (TextView) itemView.findViewById(R.id.teamCountry);
             teamYear = (TextView) itemView.findViewById(R.id.teamYear);

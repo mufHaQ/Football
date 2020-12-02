@@ -2,6 +2,7 @@ package com.mufhaq.football;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.TextView;
 
@@ -21,7 +22,7 @@ public class ListDataFavourite extends AppCompatActivity {
     private RecyclerView recyclerView;
     private DataAdapterFavourite adapter;
     TextView tvnodata;
-    private List<ModelDataFavourite> DataArrayList; //kit add kan ke adapter
+    private List<ModelFootballRealm> DataArrayList; //kit add kan ke adapter
 
 
     @Override
@@ -47,9 +48,12 @@ public class ListDataFavourite extends AppCompatActivity {
                 public void onClick(int position) {
                     Intent move = new Intent(getApplicationContext(), DetailFavourite.class);
                     move.putExtra("id",DataArrayList.get(position).getId());
-                    move.putExtra("teamBadge",DataArrayList.get(position).getBadge());
-                    move.putExtra("teamYear",DataArrayList.get(position).getTeamYear());
-                    move.putExtra("teamCountry",DataArrayList.get(position).getTeamCountry());
+                    move.putExtra("name",DataArrayList.get(position).getJudul());
+                    move.putExtra("badge",DataArrayList.get(position).getPath());
+                    move.putExtra("year",DataArrayList.get(position).getYear());
+                    move.putExtra("country",DataArrayList.get(position).getCountry());
+                    move.putExtra("desc",DataArrayList.get(position).getDesc());
+                    move.putExtra("alternate",DataArrayList.get(position).getAlternate());
                     // di putextra yang lain
                     startActivity(move);
                 }

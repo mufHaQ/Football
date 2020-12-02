@@ -16,13 +16,13 @@ public class RealmHelper {
     }
 
     // untuk menyimpan data
-    public void save(final ModelDataFavourite footballModel){
+    public void save(final ModelFootballRealm footballModel){
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
                 if (realm != null){
                     Log.e("Created", "Database was created");
-                    Number currentIdNum = realm.where(ModelDataFavourite.class).max("id");
+                    Number currentIdNum = realm.where(ModelFootballRealm.class).max("id");
                     int nextId;
                     if (currentIdNum == null){
                         nextId = 1;
@@ -30,7 +30,7 @@ public class RealmHelper {
                         nextId = currentIdNum.intValue() + 1;
                     }
                     footballModel.setId(nextId);
-                    ModelDataFavourite model = realm.copyToRealm(footballModel);
+                    ModelFootballRealm model = realm.copyToRealm(footballModel);
                 }else{
                     Log.e("ppppp", "execute: Database not Exist");
                 }
@@ -39,13 +39,13 @@ public class RealmHelper {
     }
 
     // untuk memanggil semua data
-    public List<ModelDataFavourite> getAllClub(){
-        RealmResults<ModelDataFavourite> results = realm.where(ModelDataFavourite.class).findAll();
+    public List<ModelFootballRealm> getAllClub(){
+        RealmResults<ModelFootballRealm> results = realm.where(ModelFootballRealm.class).findAll();
         return results;
     }
 
     public void delete(Integer id){
-        final RealmResults<ModelDataFavourite> model = realm.where(ModelDataFavourite.class).equalTo("id", id).findAll();
+        final RealmResults<ModelFootballRealm> model = realm.where(ModelFootballRealm.class).equalTo("id", id).findAll();
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {

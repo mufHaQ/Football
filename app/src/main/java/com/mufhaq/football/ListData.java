@@ -46,38 +46,6 @@ public class  ListData extends AppCompatActivity {
         //addData();
         addDataOnline();
     }
-//    void addData() {
-//        //offline, isi data offline dulu
-//        DataArrayList = new ArrayList<>();
-//        Model data1 = new Model();
-//        data1.setOriginal_title("Judul Film");
-//        data1.setPoster_path("https://image.tmdb.org/t/p/w500/k68nPLbIST6NP96JmTxmZijEvCA.jpg");
-//        data1.setAdult(false);
-//        data1.setOverview("Deskripsi Film disini");
-//        data1.setVote_count(100);
-//        data1.setRelease_date("01-01-2020");
-//        DataArrayList.add(data1);
-//
-//
-//        adapter = new DataAdapter(DataArrayList, new DataAdapter.Callback() {
-//            @Override
-//            public void onClick(int position) {
-//
-//            }
-//
-//            @Override
-//            public void test() {
-//
-//            }
-//        });
-//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ListData.this);
-//        recyclerView.setLayoutManager(layoutManager);
-//        recyclerView.setAdapter(adapter);
-//
-//        //get data online
-//
-//
-//    }
 
     void addDataOnline(){
         //kasih loading
@@ -123,14 +91,17 @@ public class  ListData extends AppCompatActivity {
                                 public void onClick(int position) {
                                     ModelData myClub = DataArrayList.get(position);
                                     Intent intent = new Intent(getApplicationContext(), DetailClub.class);
-                                    intent.putExtra("id",myClub.idTeam);
+                                    intent.putExtra("idTeam",myClub.idTeam);
                                     intent.putExtra("namaClub",myClub.teamTeam);
                                     intent.putExtra("logoClub",myClub.teamTeamBadge);
                                     intent.putExtra("deskripsiClub",myClub.teamDescriptionEN);
-                                    intent.putExtra("namaStadium",myClub.teamStadium);
-                                    intent.putExtra("lokasiStadium",myClub.teamStadiumLocation);
-                                    intent.putExtra("kapasitasStadium",myClub.intStadiumCapacity);
-                                    intent.putExtra("deskripsiStadium",myClub.teamStadiumDescription);
+                                    intent.putExtra("formedYear",myClub.teamFormedYear);
+                                    intent.putExtra("alternateTeamName",myClub.teamAlternate);
+                                    intent.putExtra("country",myClub.teamCountry);
+//                                    intent.putExtra("namaStadium",myClub.teamStadium);
+//                                    intent.putExtra("lokasiStadium",myClub.teamStadiumLocation);
+//                                    intent.putExtra("kapasitasStadium",myClub.intStadiumCapacity);
+//                                    intent.putExtra("deskripsiStadium",myClub.teamStadiumDescription);
                                     startActivity(intent);
                                     Toast.makeText(ListData.this, ""+position, Toast.LENGTH_SHORT).show();
                                 }
