@@ -45,14 +45,14 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHold
 
     @Override
     public void onBindViewHolder(final DatakuViewHolder holder, final int position) {
-        holder.teamName.setText(dataList.get(position).getTeamTeam());
-        holder.teamNameAlternate.setText(dataList.get(position).getTeamAlternate());
-        holder.teamCountry.setText(dataList.get(position).getTeamCountry());
-        holder.teamYear.setText(dataList.get(position).getTeamFormedYear());
-        Log.d("logo", "onBindViewHolder: "+dataList.get(position).getTeamTeamBadge());
+        holder.teamName.setText(dataList.get(position).getTeamName());
+        holder.teamNameAlternate.setText(dataList.get(position).getAlternate());
+        holder.teamCountry.setText(dataList.get(position).getCountry());
+        holder.teamYear.setText(dataList.get(position).getYear());
+        Log.d("logo", "onBindViewHolder: "+dataList.get(position).getBadge());
         //pakai glide karena untuk nampilkan data gambar dari URL / permission / graddle
         Glide.with(holder.itemView)
-                .load(dataList.get(position).getTeamTeamBadge())
+                .load(dataList.get(position).getBadge())
 //                .override(Target.SIZE_ORIGINAL)
                 .apply(new RequestOptions().override(400))
                 .placeholder(R.mipmap.ic_launcher)

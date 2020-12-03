@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Schedule_List"></activity>
+        <activity android:name=".Schedule_List" />
         <activity android:name=".DetailFavourite" />
         <activity android:name=".DetailClub" />
         <activity android:name=".ListData" />

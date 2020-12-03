@@ -38,7 +38,6 @@ public class MainMenu extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), ListData.class));
             }
         });
-
         menu2 = (CardView)findViewById(R.id.menu2);
         menu2.setOnClickListener(new View.OnClickListener() {
             @Override

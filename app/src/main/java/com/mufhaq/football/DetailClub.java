@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 
 import io.realm.Realm;
@@ -67,7 +68,8 @@ public class DetailClub extends AppCompatActivity {
 
             Glide.with(DetailClub.this)
                     .load(path)
-                    .override(Target.SIZE_ORIGINAL)
+//                    .override(Target.SIZE_ORIGINAL)
+                    .apply(new RequestOptions().override(400))
                     .placeholder(R.mipmap.ic_launcher)
                     .into(teamBadges);
             // and get whatever type user account id is

@@ -47,6 +47,39 @@ public class  ListData extends AppCompatActivity {
         addDataOnline();
     }
 
+//    void addData() {
+//        //offline, isi data offline dulu
+//        DataArrayList = new ArrayList<>();
+//        Model data1 = new Model();
+//        data1.setOriginal_title("Judul Film");
+//        data1.setPoster_path("https://image.tmdb.org/t/p/w500/k68nPLbIST6NP96JmTxmZijEvCA.jpg");
+//        data1.setAdult(false);
+//        data1.setOverview("Deskripsi Film disini");
+//        data1.setVote_count(100);
+//        data1.setRelease_date("01-01-2020");
+//        DataArrayList.add(data1);
+//
+//
+//        adapter = new DataAdapter(DataArrayList, new DataAdapter.Callback() {
+//            @Override
+//            public void onClick(int position) {
+//
+//            }
+//
+//            @Override
+//            public void test() {
+//
+//            }
+//        });
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ListData.this);
+//        recyclerView.setLayoutManager(layoutManager);
+//        recyclerView.setAdapter(adapter);
+//
+//        //get data online
+//
+//
+//    }
+
     void addDataOnline(){
         //kasih loading
         dialog.setMessage("Sedang memproses data");
@@ -71,18 +104,18 @@ public class  ListData extends AppCompatActivity {
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 modelku = new ModelData();
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                modelku.setIdTeam(jsonObject.getInt("idTeam"));
-                                modelku.setTeamTeam(jsonObject.getString("strTeam"));
-                                modelku.setTeamTeamBadge(jsonObject.getString("strTeamBadge"));
-                                modelku.setTeamCountry(jsonObject.getString("strCountry"));
-                                modelku.setTeamDescriptionEN(jsonObject.getString("strDescriptionEN"));
-                                modelku.setTeamStadiumThumb(jsonObject.getString("strStadiumThumb"));
-                                modelku.setTeamFormedYear(jsonObject.getString("intFormedYear"));
-                                modelku.setTeamStadiumLocation(jsonObject.getString("strStadiumLocation"));
-                                modelku.setTeamAlternate(jsonObject.getString("strAlternate"));
-                                modelku.setTeamStadium(jsonObject.getString("strStadium"));
-                                modelku.setIntStadiumCapacity(jsonObject.getInt("intStadiumCapacity"));
-                                modelku.setTeamStadiumDescription(jsonObject.getString("strStadiumDescription"));
+                                modelku.setId(jsonObject.getInt("idTeam"));
+                                modelku.setTeamName(jsonObject.getString("strTeam"));
+                                modelku.setBadge(jsonObject.getString("strTeamBadge"));
+                                modelku.setCountry(jsonObject.getString("strCountry"));
+                                modelku.setDescEn(jsonObject.getString("strDescriptionEN"));
+                                modelku.setStadiumThumb(jsonObject.getString("strStadiumThumb"));
+                                modelku.setYear(jsonObject.getString("intFormedYear"));
+                                modelku.setStadiumLoc(jsonObject.getString("strStadiumLocation"));
+                                modelku.setAlternate(jsonObject.getString("strAlternate"));
+                                modelku.setStadium(jsonObject.getString("strStadium"));
+                                modelku.setStadiumCap(jsonObject.getInt("intStadiumCapacity"));
+                                modelku.setStadiumDesc(jsonObject.getString("strStadiumDescription"));
                                 DataArrayList.add(modelku);
                             }
                             //untuk handle click
@@ -91,13 +124,13 @@ public class  ListData extends AppCompatActivity {
                                 public void onClick(int position) {
                                     ModelData myClub = DataArrayList.get(position);
                                     Intent intent = new Intent(getApplicationContext(), DetailClub.class);
-                                    intent.putExtra("idTeam",myClub.idTeam);
-                                    intent.putExtra("namaClub",myClub.teamTeam);
-                                    intent.putExtra("logoClub",myClub.teamTeamBadge);
-                                    intent.putExtra("deskripsiClub",myClub.teamDescriptionEN);
-                                    intent.putExtra("formedYear",myClub.teamFormedYear);
-                                    intent.putExtra("alternateTeamName",myClub.teamAlternate);
-                                    intent.putExtra("country",myClub.teamCountry);
+                                    intent.putExtra("idTeam",myClub.id);
+                                    intent.putExtra("namaClub",myClub.teamName);
+                                    intent.putExtra("logoClub",myClub.Badge);
+                                    intent.putExtra("deskripsiClub",myClub.descEn);
+                                    intent.putExtra("formedYear",myClub.year);
+                                    intent.putExtra("alternateTeamName",myClub.alternate);
+                                    intent.putExtra("country",myClub.country);
 //                                    intent.putExtra("namaStadium",myClub.teamStadium);
 //                                    intent.putExtra("lokasiStadium",myClub.teamStadiumLocation);
 //                                    intent.putExtra("kapasitasStadium",myClub.intStadiumCapacity);

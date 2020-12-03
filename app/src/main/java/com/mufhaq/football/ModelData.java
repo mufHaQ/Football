@@ -1,112 +1,112 @@
 package com.mufhaq.football;
 
 public class ModelData {
-    int idTeam;
-    String teamTeam; // Team Name
-    String teamTeamBadge; // Team Badge
-    String teamCountry; // Team Country
-    String teamDescriptionEN; // Team Description
-    String teamStadiumThumb;
-    String teamFormedYear;
-    String teamStadiumLocation;
-    String teamAlternate;
-    String teamStadium;
-    int intStadiumCapacity;
-    String teamStadiumDescription;
+    int id;
+    String teamName; // Team Name
+    String Badge; // Team Badge
+    String country; // Team Country
+    String descEn; // Team Description
+    String stadiumThumb;
+    String year;
+    String stadiumLoc;
+    String alternate;
+    String stadium;
+    int stadiumCap;
+    String stadiumDesc;
 
-    public int getIdTeam() {
-        return idTeam;
+    public int getId() {
+        return id;
     }
 
-    public void setIdTeam(int idTeam) {
-        this.idTeam = idTeam;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getTeamTeam() {
-        return teamTeam;
+    public String getTeamName() {
+        return teamName;
     }
 
-    public void setTeamTeam(String teamTeam) {
-        this.teamTeam = teamTeam;
+    public void setTeamName(String team) {
+        this.teamName = team;
     }
 
-    public String getTeamTeamBadge() {
-        return teamTeamBadge;
+    public String getBadge() {
+        return Badge;
     }
 
-    public void setTeamTeamBadge(String teamTeamBadge) {
-        this.teamTeamBadge = teamTeamBadge;
+    public void setBadge(String badge) {
+        Badge = badge;
     }
 
-    public String getTeamCountry() {
-        return teamCountry;
+    public String getCountry() {
+        return country;
     }
 
-    public void setTeamCountry(String teamCountry) {
-        this.teamCountry = teamCountry;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
-    public String getTeamDescriptionEN() {
-        return teamDescriptionEN;
+    public String getDescEn() {
+        return descEn;
     }
 
-    public void setTeamDescriptionEN(String teamDescriptionEN) {
-        this.teamDescriptionEN = teamDescriptionEN;
+    public void setDescEn(String descEn) {
+        this.descEn = descEn;
     }
 
-    public String getTeamStadiumThumb() {
-        return teamStadiumThumb;
+    public String getStadiumThumb() {
+        return stadiumThumb;
     }
 
-    public void setTeamStadiumThumb(String teamStadiumThumb) {
-        this.teamStadiumThumb = teamStadiumThumb;
+    public void setStadiumThumb(String stadiumThumb) {
+        this.stadiumThumb = stadiumThumb;
     }
 
-    public String getTeamFormedYear() {
-        return teamFormedYear;
+    public String getYear() {
+        return year;
     }
 
-    public void setTeamFormedYear(String teamFormedYear) {
-        this.teamFormedYear = teamFormedYear;
+    public void setYear(String year) {
+        this.year = year;
     }
 
-    public String getTeamStadiumLocation() {
-        return teamStadiumLocation;
+    public String getStadiumLoc() {
+        return stadiumLoc;
     }
 
-    public void setTeamStadiumLocation(String teamStadiumLocation) {
-        this.teamStadiumLocation = teamStadiumLocation;
+    public void setStadiumLoc(String stadiumLoc) {
+        this.stadiumLoc = stadiumLoc;
     }
 
-    public String getTeamAlternate() {
-        return teamAlternate;
+    public String getAlternate() {
+        return alternate;
     }
 
-    public void setTeamAlternate(String teamAlternate) {
-        this.teamAlternate = teamAlternate;
+    public void setAlternate(String alternate) {
+        this.alternate = alternate;
     }
 
-    public String getTeamStadium() {
-        return teamStadium;
+    public String getStadium() {
+        return stadium;
     }
 
-    public void setTeamStadium(String teamStadium) {
-        this.teamStadium = teamStadium;
+    public void setStadium(String stadium) {
+        this.stadium = stadium;
     }
 
-    public int getIntStadiumCapacity() {
-        return intStadiumCapacity;
+    public int getStadiumCap() {
+        return stadiumCap;
     }
 
-    public void setIntStadiumCapacity(int intStadiumCapacity) {
-        this.intStadiumCapacity = intStadiumCapacity;
+    public void setStadiumCap(int stadiumCap) {
+        this.stadiumCap = stadiumCap;
     }
 
-    public String getTeamStadiumDescription() {
-        return teamStadiumDescription;
+    public String getStadiumDesc() {
+        return stadiumDesc;
     }
 
-    public void setTeamStadiumDescription(String teamStadiumDescription) {
-        this.teamStadiumDescription = teamStadiumDescription;
+    public void setStadiumDesc(String stadiumDesc) {
+        this.stadiumDesc = stadiumDesc;
     }
 }

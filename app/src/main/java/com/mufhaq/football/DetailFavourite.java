@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 
 import org.w3c.dom.Text;
@@ -51,7 +52,8 @@ public class DetailFavourite extends AppCompatActivity {
 
             Glide.with(DetailFavourite.this)
                     .load(path)
-                    .override(Target.SIZE_ORIGINAL)
+//                    .override(Target.SIZE_ORIGINAL)
+                    .apply(new RequestOptions().override(400))
                     .placeholder(R.mipmap.ic_launcher)
                     .into(ivposter);
             // and get whatever type user account id is
