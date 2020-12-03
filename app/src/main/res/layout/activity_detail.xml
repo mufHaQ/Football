@@ -6,12 +6,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mufhaq.football.DetailClub">
+    tools:context="com.mufhaq.football.Detail">
 
     <androidx.cardview.widget.CardView
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="70px"
+        android:layout_marginStart="40px"
+        android:layout_marginEnd="40px"
         android:id="@+id/cardData"
         android:elevation="10dp"
         app:cardElevation="10dp"
@@ -104,10 +104,18 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-
-
-
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_marginTop="40px"
+        android:layout_marginStart="40px"
+        android:layout_marginEnd="40px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Bookmark"
+        android:id="@+id/bBookmark"
+        />
 
     <androidx.cardview.widget.CardView
         android:layout_marginTop="40px"
@@ -127,15 +135,36 @@
             tools:text="@tools:sample/lorem/random"/>
     </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="40px"
+        android:layout_marginStart="40px"
+        android:layout_marginEnd="40px"
+        android:layout_width="match_parent"
+        android:layout_height="700px"
+        app:cardElevation="30dp"
+        app:cardCornerRadius="20dp">
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:id="@+id/rvdataDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Bookmark"
-        android:id="@+id/bBookmark"
-        android:layout_marginTop="20dp"
-        />
+            <TextView
+                android:id="@+id/tvnodataDetail"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Tidak ada Data untuk ditampilkan"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </LinearLayout>

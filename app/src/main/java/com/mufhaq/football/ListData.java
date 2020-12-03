@@ -123,7 +123,7 @@ public class  ListData extends AppCompatActivity {
                                 @Override
                                 public void onClick(int position) {
                                     ModelData myClub = DataArrayList.get(position);
-                                    Intent intent = new Intent(getApplicationContext(), DetailClub.class);
+                                    Intent intent = new Intent(getApplicationContext(), Detail.class);
                                     intent.putExtra("idTeam",myClub.id);
                                     intent.putExtra("namaClub",myClub.teamName);
                                     intent.putExtra("logoClub",myClub.Badge);

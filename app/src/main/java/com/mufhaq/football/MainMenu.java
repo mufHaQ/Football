@@ -46,13 +46,13 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
-//        menu3 = (CardView) findViewById(R.id.menu3);
-//        menu3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(getApplicationContext(), Schedule_List.class));
-//            }
-//        });
+        menu3 = (CardView) findViewById(R.id.menu3);
+        menu3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ListDataEventsPast.class));
+            }
+        });
 
         //
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
